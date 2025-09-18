@@ -1,0 +1,149 @@
+/* 顶部横幅样式 */
+.top-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #a47864;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav .menu {
+  color:#dadada;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav .menu li {
+  display: inline;
+}
+
+nav .menu li a {
+  text-decoration: none;
+  color: #f0f0f0;
+  font-size: 14px;
+}
+
+nav .menu li a:hover {
+  text-decoration: underline;
+}
+
+/* 右侧选项 */
+.right-options {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.right-options a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.right-options select {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.right-options .profile-icon,
+.right-options .cart-icon {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* 购物车图标的包裹样式sdsds */
+.cart-icon-wrapper {
+  position: relative;
+}
+
+
+.cart-icon-wrapper:hover::after {
+  content: "Shopping Cart";
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  background-color: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* 主体内容 */
+main {
+  margin-top: 0px; /* 避免与顶部横幅重叠 */
+  padding-top: 20px;
+}
+
+/* 英雄部分，背景图片 */
+.hero {
+  position: relative;
+  height: 500px; /* 设置高度 */
+  background-color:#000000; /* 替换为实际图片链接 */
+  background-size: cover; /* 让图片覆盖整个区域 */
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* 背景上的内容 */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明的黑色遮罩层 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  text-align: center;
+  color: #fff; /* 白色文字与背景对比 */
+}
+
+.hero-text h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 18px;
+}
+
+.hero-text .shop-now {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ad4002;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#main-container{
+  display: block;
+}
