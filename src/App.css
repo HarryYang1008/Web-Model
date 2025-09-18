@@ -1,149 +1,167 @@
-/* 顶部横幅样式 */
-.top-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #a47864;
+/* Background gradient */
+.landing-container {
+  min-height: 100vh;
+  background: linear-gradient(to right, #2b1055, #190537);
   color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  font-family: "Poppins", sans-serif;
 }
 
-.logo {
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #ddd;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #fff;
+}
+
+.wallet-btn {
+  background: #2563eb;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.wallet-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  justify-content: center;   /* ✅ 改成居中，而不是 space-between */
+  align-items: center;
+  padding: 60px 80px;
+  flex-wrap: wrap;
+  gap: 100px;   /* ✅ 增加间距控制 */
+  max-width: 1200px; /* ✅ 限制最大宽度，避免内容散开 */
+  margin: 0 auto;   /* ✅ 居中对齐 */
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+
+.hero-text h1 {
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1.2;
+  transform: scaleX(1.3); /* 横向拉伸 1.1 倍 */
+  display: inline-block;  
+}
+
+.hero-text p {
+  margin-top: 20px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* CTA button */
+.discover-btn {
+  margin-top: 30px;
+  background: #2563eb;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.discover-btn:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.6);
+}
+
+
+.arrow {
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 50px;
+  margin-top: 40px;
+}
+
+.stats div {
+  padding-right: 40px;
+  border-right: 1px solid rgba(255,255,255,0.2);
+}
+.stats div:last-child {
+  border-right: none;
+}
+
+
+.stats h3 {
   font-size: 24px;
   font-weight: bold;
 }
 
-nav .menu {
-  color:#dadada;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-}
-
-nav .menu li {
-  display: inline;
-}
-
-nav .menu li a {
-  text-decoration: none;
-  color: #f0f0f0;
+.stats p {
   font-size: 14px;
+  color: #aaa;
 }
 
-nav .menu li a:hover {
-  text-decoration: underline;
-}
-
-/* 右侧选项 */
-.right-options {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.right-options a {
-  text-decoration: none;
-  color: #333;
-  font-size: 14px;
-}
-
-.right-options select {
-  padding: 5px;
-  font-size: 14px;
-}
-
-.right-options .profile-icon,
-.right-options .cart-icon {
-  font-size: 18px;
-  cursor: pointer;
-}
-
-/* 购物车图标的包裹样式sdsds */
-.cart-icon-wrapper {
+/* Right Side Image */
+.hero-image {
   position: relative;
+  width: 400px;
+  height: 500px;
+  margin-top: 40px;
 }
 
-
-.cart-icon-wrapper:hover::after {
-  content: "Shopping Cart";
+.bg-card {
   position: absolute;
-  bottom: -20px;
-  left: 0;
-  background-color: #333;
-  color: #fff;
-  font-size: 12px;
-  padding: 3px 6px;
-  border-radius: 4px;
-  white-space: nowrap;
-}
-
-/* 主体内容 */
-main {
-  margin-top: 0px; /* 避免与顶部横幅重叠 */
-  padding-top: 20px;
-}
-
-/* 英雄部分，背景图片 */
-.hero {
-  position: relative;
-  height: 500px; /* 设置高度 */
-  background-color:#000000; /* 替换为实际图片链接 */
-  background-size: cover; /* 让图片覆盖整个区域 */
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-/* 背景上的内容 */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000000;
-  background-color: rgba(0, 0, 0, 0.5); /* 半透明的黑色遮罩层 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 12px;
 }
 
-.hero-text {
-  text-align: center;
-  color: #fff; /* 白色文字与背景对比 */
+.card1 {
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(to right, #9333ea, #ec4899);
+  z-index: 1;
 }
 
-.hero-text h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
+.card2 {
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(to right, #3b82f6, #1e3a8a);
+  z-index: 2;
 }
 
-.hero-text p {
-  font-size: 18px;
-}
-
-.hero-text .shop-now {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #ad4002;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-#main-container{
-  display: block;
+.main-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  z-index: 3;
 }

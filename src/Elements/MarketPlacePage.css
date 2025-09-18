@@ -1,0 +1,226 @@
+:root{
+    /* keep our brand theme */
+    --bg-grad-from:#2b1055;
+    --bg-grad-to:#190537;
+    --panel:#1b1333;
+    --panel-2:#241a44;
+    --text:#e8e6ff;
+    --muted:#b7b4d6;
+    --blue:#3b82f6;
+    --blue-2:#2563eb;
+    --green:#22c55e;
+    --red:#ef4444;
+    --chip:#2a2048;
+    --chip-active:#3b2e6a;
+    --stroke:rgba(255,255,255,.08);
+    --header-h: 72px; 
+  }
+  
+  /* layout */
+/* 整页容器：纵向排 header + 内容 */
+.mp-page{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    color:var(--text);
+    background: linear-gradient(90deg, var(--bg-grad-from), var(--bg-grad-to));
+  }
+  
+  /* 顶部导航（和首页一致，可加吸顶与毛玻璃） */
+  .header{
+    position: sticky;       /* 吸顶 */
+    top: 0;
+    z-index: 20;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 20px 60px;
+    backdrop-filter: blur(6px);
+    background: rgba(20, 10, 40, 0.25); /* 半透明保持主题 */
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  
+  /* 主体：左右排版 */
+  .mp-body{
+    /* 关键：占满剩余视口并禁用外层滚动 */
+    height: calc(100vh - var(--header-h) - 48px); /* 48 = 上下 padding 24 + 24 */
+    padding: 24px 60px;
+    display: grid;
+    grid-template-columns: 300px 1fr; /* 左侧宽度按需改 */
+    gap: 24px;
+    
+    overflow: hidden;        /* 阻止页面滚动，只允许右侧滚动 */
+  }
+  
+  
+  /* sidebar */
+  .mp-sidebar{
+    background:var(--panel);
+    border:1px solid var(--stroke);
+    border-radius:16px;
+    padding:18px;
+  
+    /* 关键：在 mp-body 的滚动环境中保持可见 */
+    position: sticky;
+    top: 24px;               /* 与 mp-body 的内边距对齐 */
+    align-self: start;
+    max-height: calc(100% - 24px);
+            /* 如果侧栏内容太长，内部自己滚动 */
+  }
+  
+  .side-section{ margin-bottom:18px; }
+  .side-title{
+    font-weight:700; font-size:14px; margin-bottom:10px; color:#fff;
+  }
+  .side-search{
+    width:90%;
+    background:#100b22; color:var(--text);
+    border:1px solid var(--stroke);
+    border-radius:10px; padding:8px 10px; margin-bottom:10px;
+  }
+  .chip-list{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{
+    background:var(--chip); color:var(--text);
+    border:1px solid var(--stroke); border-radius:999px;
+    padding:6px 12px; font-size:12px; cursor:pointer;
+  }
+  .chip.active{ background:var(--chip-active); border-color:#5f4d99; }
+  
+  .toggle{ display:flex; align-items:center; gap:8px; color:var(--muted); font-size:14px; }
+  .toggle input{ appearance:auto; }
+  .tkn{ display:inline-block; width:10px; height:10px; border-radius:50%; background:#8a86a8; }
+  
+  /* main area */
+  .mp-main{
+    background:var(--panel);
+    border:1px solid var(--stroke);
+    border-radius:16px;
+    padding:16px;
+    overflow: auto;          /* 关键：右侧表格区滚动 */
+    height: 85%;
+  }
+  
+  /* top bar */
+  .mp-topbar{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:6px 8px 14px;
+    border-bottom:1px solid var(--stroke);
+  }
+  .tabs{ display:flex; gap:6px; }
+  .tab{
+    background:transparent; color:var(--muted);
+    padding:8px 14px; border-radius:10px; border:1px solid transparent; cursor:pointer;
+  }
+  .tab.active{
+    color:#fff; border-color:#5f4d99; background:var(--panel-2);
+  }
+  .mp-actions{ display:flex; gap:10px; align-items:center; }
+  .mp-search{
+    width:260px; background:#100b22; color:var(--text);
+    border:1px solid var(--stroke); border-radius:10px; padding:8px 10px;
+  }
+  
+  /* table */
+  .mp-table{ margin-top:12px; }
+  .thead,.trow{
+    display:grid;
+    grid-template-columns: 1.6fr repeat(7,1fr) 120px;
+    align-items:center;
+    gap:8px;
+    padding:10px 12px;
+  }
+  .thead{
+    color:var(--muted);
+    font-size:12px; text-transform:uppercase; letter-spacing:.04em;
+    position:sticky; top:0; background:var(--panel);
+    z-index:2; border-bottom:1px solid var(--stroke);
+  }
+  .trow{
+    border-bottom:1px solid var(--stroke);
+  }
+  .trow:hover{ background:rgba(255,255,255,.02); }
+  
+  .th, .td{ display:flex; align-items:center; }
+  .th.num{ justify-content:flex-start; gap:6px; background:none; border:none; color:var(--muted); cursor:pointer; }
+  .carets::before{
+    content:"▲"; font-size:10px; opacity:.3;
+    margin-left:4px; display:inline-block; transform: translateY(-1px) rotate(0deg);
+  }
+  .carets.desc::before{ content:"▼"; }
+  .name{ gap:10px; }
+  .rank{
+    width:22px; height:22px; border-radius:6px; background:#100b22; border:1px solid var(--stroke);
+    display:grid; place-items:center; font-size:12px; color:#a9a6c7;
+  }
+  .avt{
+    width:32px; height:32px; border-radius:8px; background:linear-gradient(180deg,#6d57d9,#c94bd7);
+    display:grid; place-items:center; color:#0a0420; font-weight:700; font-size:12px;
+    box-shadow: inset 0 0 0 2px rgba(0,0,0,.25);
+  }
+  .cname{ font-weight:600; }
+  .veri{
+    color:#6ee7b7; font-size:12px; margin-left:6px; background:#0c2a22;
+    border:1px solid rgba(110,231,183,.25); padding:2px 6px; border-radius:999px;
+  }
+  
+  .num{ font-variant-numeric: tabular-nums; }
+  .up{ color:var(--green); }
+  .down{ color:var(--red); }
+  .spark-h{ justify-content:flex-end; }
+  
+  /* sparkline */
+  .spark path{
+    fill:none;
+    stroke:#22c55e;
+    stroke-width:2;
+  }
+  
+  /* responsive */
+  @media (max-width: 1100px){
+    .mp-sidebar{ display:none; }
+    .thead,.trow{ grid-template-columns: 2fr repeat(5,1fr) 100px; }
+    .thead .num:nth-last-child(-n+2),
+    .trow .num:nth-last-child(-n+2){ display:none; } /* hide owners/supply on small screens */
+  }
+  
+
+  /* 顶部导航栏样式（复用首页） */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px;
+    margin-bottom: 20px;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+  
+  .nav a:hover {
+    color: #fff;
+  }
+  
+  .wallet-btn {
+    background: #2563eb;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .wallet-btn:hover {
+    background: #1d4ed8;
+  }
+  

@@ -4,28 +4,27 @@ import "./review.css";
 const reviews = [
   {
     name: "Bradley N.",
-    role: "Verified Buyer",
-    title: "Good for your balls!",
-        content:
-        
-      "I bought the manscape package for my fiancé for his birthday and he's so in love lol! He has not had any ingrown hairs or razor bumps and he really appreciates this gift and how delicate it is. He told me he's never had such a close shave down there because balls are sensitive. I'm so happy for him with this purchase!",
+    role: "Verified Collector",
+    title: "Perfect platform for NFTs!",
+    content:
+      "I joined this marketplace a few months ago and I’m impressed with how seamless it is to buy and sell. Transactions are smooth, the fees are transparent, and the UI feels modern. I’ve discovered some amazing new artists here and managed to flip a few pieces at a great profit. Highly recommend for both beginners and experienced collectors!",
   },
   {
     name: "Dane C.",
-    role: "Verified Buyer",
-    title: "Everything was awesome 10/10",
+    role: "Verified Creator",
+    title: "The best place to showcase digital art",
     content:
-      "Love it. The weed whacker is by far the best ear and nose trimmer I used and the lawn mower is such a smooth trim and so easy to use. Also, at first, I thought ball deodorant and toner was a bit excessive but now that I used it I would highly recommend. The boxer briefs are soft and just as good or better than other primo brands.",
+      "As an NFT creator, I love how easy it is to mint my work here. The tools are straightforward, royalties are built in, and the exposure has been fantastic. I even connected with collectors directly through the community section. The analytics help me understand my audience, and I feel like this is the future of digital ownership.",
   },
   {
     name: "Julian B.",
-    role: "Verified Buyer",
-    title: "MANSCAPED is the future",
+    role: "Verified Investor",
+    title: "This marketplace is the future",
     content:
-      "I've tried other products in the past but nothing beats manscaped. It's actually products that help you entirely. Not just physically but in return you get peace of mind knowing everything is natural, safe, and best of all easy to use. I'm a manscaped customer for life. You should give it a try and enjoy all the benefits it has to offer.",
+      "I’ve tried trading on a few other NFT platforms, but nothing compares to this one. Liquidity is strong, the floor prices are accurate, and I can trust the verified collections. On top of that, I feel secure knowing all assets are backed by reliable smart contracts. It’s not just a place to trade—it’s a full ecosystem for collectors, creators, and investors.",
   },
- 
 ];
+
 
 const Reviews = () => {
   return (

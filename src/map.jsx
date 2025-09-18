@@ -1,108 +1,74 @@
-import React,{Component} from "react";
-import "./style.css";
+import React from "react";
+import { HashRouter, Routes, Route, Link } from "react-router-dom";
 
+import "./App.css";
+import nftImage from "./NFT_status.png";
+import Footer from "./Elements/Footer.jsx"
 import Reviews from "./Elements/review";
-import PopularProducts from './Elements/popularproduct.jsx'
-import Footer from './Elements/Footer.jsx'
-import GroinKitsPage from './Elements/GroinKitsPage.jsx'
 
-class MapComponent extends Component {
+const NFTLandingPage = () => {
+  return (
+    <div className="landing-container">
+      {/* Header */}
+      {/* 顶部导航 */}
+      <header className="header">
+            <nav className="nav">
+            <Link to="/">Main</Link>
+            <Link to="/marketplace">Marketplace</Link>
+            <Link to="/creator">Creator</Link>
+            <Link to="/community">Community</Link>
+            </nav>
+            <button className="wallet-btn">Connect to wallet</button>
+      </header>
 
-  ///////// The popular product part with session control ///////////////////////////////
-  
-  
-  
- ////////////////////// PAGE Show //////////////
- showmainpage = () => {
-  const landing_page= document.getElementById('main-container');
-  landing_page.style.display = 'block';
-  const sign_in_page = document.getElementById('GroinKitsPage-container');
-  sign_in_page.style.display = 'none';
-}
+      {/* Hero Section */}
+      <section className="hero-section">
+        {/* Left Side */}
+        <div className="hero-text">
+          <h1>
+            Create Your Own <br /> NFT Dream <br /> Gallery
+          </h1>
+          <p>
+            The largest NFT marketplace. Authentic and truly unique digital
+            creation. Signed and issued by the creator, made possible by
+            blockchain technology.
+          </p>
 
-  showshoppingpage = () => {
-    const landing_page= document.getElementById('main-container');
-    landing_page.style.display = 'none';
-    const sign_in_page = document.getElementById('GroinKitsPage-container');
-    sign_in_page.style.display = 'block';
-  }
-  
-///////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-  render() {
-    return (
-      <div>
-        {/* 固定顶部横幅 */}
-        <header className="top-banner">
-          <button className="logo" href="#" onClick={this.showmainpage}>groomed.</button>
-          <nav>
-            <ul className="menu">
-              <li>
-                <a href="#">Deals & Kits</a>
-              </li>
-              <li>
-                <a href="#">Tools, Trimmers & Blades</a>
-              </li>
-              <li>
-                <a href="#">Beard & Face</a>
-              </li>
-              <li>
-                <a href="#">Head & Body</a>
-              </li>
-              <li>
-                <a href="#" onClick={this.showshoppingpage}>Shop All</a>
-              </li>
-            </ul>
-          </nav>
-          <div className="right-options">
-            <a href="#">About us</a>
-            <a href="#">Our CTA</a>
-            <select name="language" id="language-select">
-              <option value="en">EN</option>
-              <option value="es">ES</option>
-              <option value="fr">FR</option>
-            </select>
-            <a href="#" className="cart-icon">
-              🛒
-            </a>
-            <a href="#" className="profile-icon">
-              👤
-            </a>
-            
+          <div className="cta">
+            <button className="discover-btn">
+              Discover NFT <span className="arrow">↗</span>
+            </button>
           </div>
-        </header>
 
-        <div id ="main-container">
-          <main>
-            {/* background picture of main page part */}
-            <section className="hero">
-              <div className="overlay">
-                <div className="hero-text">
-                  <h1>groomed for men</h1>
-                  <p>
-                    Stay with <span className="brand">groomed.®</span>.
-                  </p>
-                  <button className="shop-now">Shop Now</button>
-                </div>
-              </div>
-            </section>
-          </main>
-          
-          <PopularProducts />
-          <Reviews />
-          
+          {/* Stats */}
+          <div className="stats">
+            <div>
+              <h3>25.5 K</h3>
+              <p>Artwork</p>
+            </div>
+            <div>
+              <h3>15.5+ M</h3>
+              <p>Artist</p>
+            </div>
+            <div>
+              <h3>10.5+ K</h3>
+              <p>Auction</p>
+            </div>
+          </div>
         </div>
 
-        <div id = "GroinKitsPage-container" >
-          <GroinKitsPage />
+        {/* Right Side - Image */}
+        <div className="hero-image">
+          <div className="bg-card card1"></div>
+          <div className="bg-card card2"></div>
+          <img src={nftImage} alt="NFT Statue" className="main-img" />
         </div>
+      </section>
 
-        <Footer/>
-      </div>
-    );
-  }
-}
+      <Reviews />
+      <Footer/>
+    </div>
+  );
+};
 
-export default MapComponent;
+export default NFTLandingPage;
