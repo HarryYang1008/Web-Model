@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Grooming-online/static/css/main.9dee134e.css",
+    "main.js": "/Grooming-online/static/js/main.c7d911f9.js",
+    "static/js/787.4bbbca62.chunk.js": "/Grooming-online/static/js/787.4bbbca62.chunk.js",
+    "static/media/NFT_status.png": "/Grooming-online/static/media/NFT_status.fcec86f6d6902d75fe86.png",
+    "static/media/profile1.png": "/Grooming-online/static/media/profile1.2e6dfbbaf3c3486c1bb6.png",
+    "index.html": "/Grooming-online/index.html",
+    "main.9dee134e.css.map": "/Grooming-online/static/css/main.9dee134e.css.map",
+    "main.c7d911f9.js.map": "/Grooming-online/static/js/main.c7d911f9.js.map",
+    "787.4bbbca62.chunk.js.map": "/Grooming-online/static/js/787.4bbbca62.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9dee134e.css",
+    "static/js/main.c7d911f9.js"
+  ]
+}
