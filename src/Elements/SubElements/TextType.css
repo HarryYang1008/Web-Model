@@ -1,0 +1,18 @@
+.text-type {
+    display: flex;
+    justify-content: center; 
+    white-space: pre-wrap;
+    font-size: 52px;
+    font-weight: 900;
+  }
+  
+  .text-type__cursor {
+    margin-left: 0.25rem;
+    display: inline-block;
+    opacity: 1;
+  }
+  
+  .text-type__cursor--hidden {
+    display: none;
+  }
+  

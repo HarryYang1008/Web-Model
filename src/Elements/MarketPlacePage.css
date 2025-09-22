@@ -24,6 +24,7 @@
     flex-direction:column;
     color:var(--text);
     background: linear-gradient(90deg, var(--bg-grad-from), var(--bg-grad-to));
+    z-index: 1;
   }
   
   /* 顶部导航（和首页一致，可加吸顶与毛玻璃） */

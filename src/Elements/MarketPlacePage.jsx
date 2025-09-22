@@ -8,7 +8,9 @@ import Footer from "./Footer.jsx"
 
 import React, { useMemo, useState } from "react";
 import "./MarketPlacePage.css";
-
+import "../App.css";
+import "./SubElements/DarkVeil.css"
+import DarkVeil from "./SubElements/DarkVeil.jsx";
 /** Tiny sparkline component (inline SVG) */
 function Sparkline({ data = [], width = 84, height = 28 }) {
   if (!data.length) return null;
@@ -358,7 +360,7 @@ export default function MarketPlacePage() {
     return (
         
     <div className="mp-page">
-          
+       <DarkVeil />
     
       {/* ✅ 顶部导航栏（和首页一致） */}
       <header className="header">

@@ -5,10 +5,16 @@ import "./App.css";
 import nftImage from "./NFT_status.png";
 import Footer from "./Elements/Footer.jsx"
 import Reviews from "./Elements/review";
+import DarkVeil from "./Elements/SubElements/DarkVeil.jsx";  // ✅ 引入背景组件
 
 const NFTLandingPage = () => {
   return (
     <div className="landing-container">
+
+      {/* 背景组件 */}
+      <DarkVeil />
+
+      
       {/* Header */}
       {/* 顶部导航 */}
       <header className="header">
