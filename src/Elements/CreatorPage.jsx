@@ -7,7 +7,7 @@ import "./SubElements/ProfileCard.css"
 
 import profile1 from "./profile1.png";
 
-
+import Header from "./Header.jsx"
 import Footer from "./Footer.jsx"
 import DarkVeil from "./SubElements/DarkVeil.jsx";
 import TextType from './SubElements/TextType.jsx';
@@ -27,15 +27,7 @@ const CreatorPage = () => {
 
       {/* Header */}
       {/* 顶部导航 */}
-      <header className="header">
-            <nav className="nav">
-            <Link to="/">Main</Link>
-            <Link to="/marketplace">Marketplace</Link>
-            <Link to="/creator">Creator</Link>
-            <Link to="/community">Community</Link>
-            </nav>
-            <button className="wallet-btn">Connect to wallet</button>
-      </header>
+     <Header/>
 
       <section className="hero-section">
         {/* Left Side */}
@@ -53,7 +45,10 @@ const CreatorPage = () => {
             Amy Wang
           </h2>
           <p>
-          Crowned as Creator of the Month, she redefines digital artistry with authenticity and vision. Each NFT is a truly unique masterpiece—personally signed, published, and immortalized through blockchain innovation.
+            Crowned as Creator of the Month, she redefines digital
+            artistry with authenticity and vision. Each NFT is a truly unique
+            masterpiece—personally signed, published, and immortalized through
+            blockchain innovation.
           </p>
 
           <div className="cta">

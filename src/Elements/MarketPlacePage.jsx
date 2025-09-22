@@ -3,7 +3,7 @@ import { HashRouter, Routes, Route, Link } from "react-router-dom";
 
 
 import nftImage from "../NFT_status.png";
-import Footer from "./Footer.jsx"
+import Header from "./Header.jsx"
 
 
 import React, { useMemo, useState } from "react";
@@ -363,15 +363,7 @@ export default function MarketPlacePage() {
        <DarkVeil />
     
       {/* ✅ 顶部导航栏（和首页一致） */}
-      <header className="header">
-        <nav className="nav">
-          <Link to="/">Main</Link>
-          <Link to="/marketplace">Marketplace</Link>
-          <Link to="/creator">Creator</Link>
-          <Link to="/community">Community</Link>
-        </nav>
-        <button className="wallet-btn">Connect to wallet</button>
-        </header>
+      <Header/>
             
       <div className="mp-body">
       {/* Left sidebar: filters */}

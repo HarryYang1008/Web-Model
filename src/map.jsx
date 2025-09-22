@@ -3,9 +3,12 @@ import { HashRouter, Routes, Route, Link } from "react-router-dom";
 
 import "./App.css";
 import nftImage from "./NFT_status.png";
+
+import Header from "./Elements/Header.jsx"
 import Footer from "./Elements/Footer.jsx"
 import Reviews from "./Elements/review";
 import DarkVeil from "./Elements/SubElements/DarkVeil.jsx";  // ✅ 引入背景组件
+
 
 const NFTLandingPage = () => {
   return (
@@ -17,15 +20,7 @@ const NFTLandingPage = () => {
       
       {/* Header */}
       {/* 顶部导航 */}
-      <header className="header">
-            <nav className="nav">
-            <Link to="/">Main</Link>
-            <Link to="/marketplace">Marketplace</Link>
-            <Link to="/creator">Creator</Link>
-            <Link to="/community">Community</Link>
-            </nav>
-            <button className="wallet-btn">Connect to wallet</button>
-      </header>
+     <Header/>
 
       {/* Hero Section */}
       <section className="hero-section">
